@@ -12,7 +12,7 @@ cur = con.cursor()
 @bot.message_handler(commands=['start'])
 def add_group_to_db(message):
     if message.chat.type == "supergroup" or message.chat.type == "group":
-        if bot.get_chat_member(message.chat.id, message.from_user.id).status == "administrtor" or bot.get_chat_member(
+        if bot.get_chat_member(message.chat.id, message.from_user.id).status == "administrator" or bot.get_chat_member(
                 message.chat.id, message.from_user.id).status == "creator":
             if db.create(message.chat.id, message.chat.title):
                 bot.send_message(message.chat.id,
@@ -41,7 +41,7 @@ def add_group_to_db(message):
 @bot.message_handler(commands=['stat'])
 def stat(message):
     if message.chat.type == "supergroup" or message.chat.type == "group":
-        if bot.get_chat_member(message.chat.id, message.from_user.id).status == "administrtor" or bot.get_chat_member(
+        if bot.get_chat_member(message.chat.id, message.from_user.id).status == "administrator" or bot.get_chat_member(
                 message.chat.id, message.from_user.id).status == "creator":
             markup = types.InlineKeyboardMarkup(row_width=2)
             btn1 = types.InlineKeyboardButton("Top Users", callback_data='top')
