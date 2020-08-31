@@ -45,9 +45,8 @@ def stat(message):
                 message.chat.id, message.from_user.id).status == "creator":
             markup = types.InlineKeyboardMarkup(row_width=2)
             btn1 = types.InlineKeyboardButton("Top Users", callback_data='top')
-            btn2 = types.InlineKeyboardButton("Developer", callback_data='dev')
 
-            markup.add(btn1, btn2)
+            markup.add(btn1)
 
             bot.send_message(message.chat.id, f"There are {message.message_id} messages in group.", reply_markup=markup)
         else:
