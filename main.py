@@ -3,7 +3,7 @@ import telebot
 from telebot import types
 import sqlite3
 
-bot = telebot.TeleBot('1254019746:AAEkn4uAfTpONZhr9RA94eNuNFy0dI4-A9o')
+bot = telebot.TeleBot('')
 db = sql.Sql('data.db')
 con = sqlite3.connect("data.db", check_same_thread=False)
 cur = con.cursor()
